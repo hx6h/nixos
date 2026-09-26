@@ -1,0 +1,34 @@
+[general]
+framerate = 144
+autosens = 1
+bars = 0
+bar_width = 3
+bar_spacing = 1
+center_align = 1
+lower_cutoff_freq = 50
+higher_cutoff_freq = 12000
+
+[input]
+method = pipewire
+source = auto
+
+[output]
+method = noncurses
+channels = stereo
+orientation = bottom
+show_idle_bar_heads = 0
+synchronized_sync = 1
+
+[color]
+gradient = 1
+gradient_count = 5
+gradient_color_1 = '#ffb6c1'
+gradient_color_2 = '#ff8da1'
+gradient_color_3 = '#ff6699'
+gradient_color_4 = '#e60073'
+gradient_color_5 = '#b30059'
+
+[smoothing]
+monstercat = 1
+waves = 0
+noise_reduction = 77

@@ -1,0 +1,115 @@
+configuration {
+    modes: "window,run,ssh,drun";
+    sorting-method: "normal";
+    show-icons: true;
+    matching: "regex";
+    drun-match-fields: "name";
+    display-run: "menu:";
+    display-ssh: "ssh:";
+    display-drun: "apps:";
+    display-window: "windows:";
+}
+
+@theme "tokyo"
+
+* {
+    font: "Iosevka 12";
+
+    background-color: transparent;
+    text-color: @fg0;
+
+    margin: 0px;
+    padding: 0px;
+    spacing: 0px;
+}
+
+window {
+    location: center;
+    width: 480;
+    y-offset: -20;
+
+    border-radius: 0px;
+    border: 1px;
+    border-color: rgba(255, 102, 153, 0.5);
+
+    background-color: rgba(26, 27, 38, 0.85);
+    blur: true;
+}
+
+mainbox {
+    padding: 1px;
+    background-color: #1a1a1a;
+}
+
+inputbar {
+    background-color: rgba(31, 35, 50, 0.85);
+    border-radius: 0px;
+    border: 1px;
+    border-color: rgba(255, 102, 153, 0.5);
+
+    padding: 8px 16px;
+    spacing: 8px;
+}
+
+prompt {
+    text-color: #ff6699;
+    background-color: transparent;
+}
+
+entry {
+    text-color: @fg0;
+    placeholder: "search";
+    placeholder-color: #ff8da1;
+    background-color: transparent;
+}
+
+listview {
+    background-color: rgba(31, 35, 50, 0.85);
+    margin: 12px 0 0;
+    columns: 1;
+    lines: 4;
+    fixed-height: false;
+}
+
+element {
+    padding: 6px 2px;
+    spacing: 10px;
+    border-radius: 0px;
+    background-color: rgba(31, 35, 50, 0.85);
+}
+
+element normal urgent {
+    text-color: @red;
+}
+
+element normal active {
+    text-color: #ff6699;
+}
+
+element selected normal,
+element selected active {
+    background-color: rgba(255, 102, 153, 0.2);
+}
+
+element-icon {
+    size: 1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+    background-color: transparent;
+}
+
+message {
+    margin: 12px 0 0;
+    border-radius: 0px;
+    border: 1px;
+    border-color: rgba(255, 102, 153, 0.5);
+    background-color: rgba(31, 35, 50, 0.85);
+}
+
+textbox {
+    padding: 8px 24px;
+    background-color: rgba(31, 35, 50, 0.85);
+}

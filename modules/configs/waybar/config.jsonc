@@ -1,0 +1,124 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 8,
+  "margin-top": 6,
+  "margin-left": 5,
+  "margin-right": 5,
+
+  "modules-left": ["custom/launcher", "custom/lyrics"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["cpu", "memory", "group/internet", "tray", "wireplumber", "battery", "clock"],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+
+  "custom/launcher": {
+    "format": "   ",
+    "tooltip": false,
+    "on-click": "rofi -show drun"
+  },
+
+  "mpris": {
+    "format": "{player_icon} {artist} - {title}",
+    "format-paused": "{player_icon} Arch (Btw)",
+    "player-icons": {
+      "spotify": "󰓇",
+      "default": "󰎆"
+    },
+    "max-length": 35,
+    "tooltip": true
+  },
+
+  "cpu": {
+    "format": "󰍛 {usage}%"
+  },
+
+  "memory": {
+    "format": "  {used:0.1f}G"
+  },
+
+  "group/internet": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "alt",
+      "click-to-reveal": false
+    },
+    "modules": ["network", "bluetooth"]
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰒢 Ethernet",
+    "format-disconnected": "󰤭 Offline",
+    "tooltip-format": "IP: {ipaddr}\nSignal: {signalStrength}% ({signaldBm}dBm)\nInterface: {ifname}",
+    "on-click": "kitty -e nmtui"
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂯 {num_connections}",
+    "tooltip": true,
+    "on-click": "kitty --title bluetui -e bluetui"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "wireplumber": {
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "on-click": "kitty -e wiremix",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"],
+      "headphones": "󰋋",
+      "headset": "󰋎"
+    }
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󱟦 {capacity}%",
+    "format-full": "󰁹 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode"
+    }
+  },
+
+  "custom/lyrics": {
+    "return-type": "json",
+    "format": "{icon} {0}",
+    "hide-empty-text": true,
+    "format-icons": {
+      "playing": " ",
+      "paused": " ",
+      "lyric": "  ",
+      "music": "󰝚  "
+    },
+    "exec-if": "which waybar-lyric",
+    "exec": "waybar-lyric -qfpartial",
+    "on-click": "waybar-lyric play-pause"
+  }
+}

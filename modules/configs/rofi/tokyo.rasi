@@ -1,0 +1,18 @@
+* {
+  bg0     : #1a1b1f; /* darker background */
+  bg1     : #1f2027;
+  bg2     : #242531;
+  bg3     : #2c2e42;
+  fg0     : #c0c0c5; /* softer text */
+  fg1     : #a8a8b0;
+  fg2     : #7a7a8a;
+  red     : #f07178;
+  green   : #ff6699;
+  yellow  : #e0b86c;
+  blue    : #7aa2f7;
+  magenta : #ff8da1;
+  cyan    : #4ab8b5;
+
+  accent: @green;    /* pink accent */
+  urgent: @red;      /* alerts in red */
+}
