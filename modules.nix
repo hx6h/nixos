@@ -33,6 +33,7 @@ in
     rofi
     bluetui
     wiremix
+    localsend
 
     # development
     opencode
