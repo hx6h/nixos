@@ -34,6 +34,7 @@ in
     bluetui
     wiremix
     localsend
+    kdePackages.kdenlive
 
     # development
     opencode
