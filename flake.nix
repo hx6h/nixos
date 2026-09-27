@@ -26,8 +26,8 @@
             home-manager.backupFileExtension = "bak";
             home-manager.users.femboy = {
               imports = [
-                ./modules.nix
-                ./git.nix
+                ./home.nix
+                ./modules/git.nix
               ];
             };
           }

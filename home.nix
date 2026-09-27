@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  mod = ./modules;
+  dots = ./dots;
 in
 {
   home.username = "femboy";
@@ -99,17 +99,18 @@ in
 
   gtk.enable = true;
 
-  home.file.".zshrc_custom".source = mod + /zshrc;
-  home.file.".oh-my-zsh/themes/hx6h.zsh-theme".source = mod + /oh-my-zsh/themes/hx6h.zsh-theme;
+  home.file.".zshrc_custom".source = dots + /zsh/zshrc;
+  home.file.".oh-my-zsh/themes/hx6h.zsh-theme".source = dots + /zsh/themes/hx6h.zsh-theme;
 
+  # Application configuration, deployed to ~/.config/<app>.
   xdg.configFile = {
-    "cava".source = mod + /configs/cava;
-    "fastfetch".source = mod + /configs/fastfetch;
-    "flameshot".source = mod + /configs/flameshot;
-    "hypr".source = mod + /configs/hypr;
-    "kitty".source = mod + /configs/kitty;
-    "rofi".source = mod + /configs/rofi;
-    "waybar".source = mod + /configs/waybar;
-    "images".source = mod + /configs/images;
+    "cava".source = dots + /cava;
+    "fastfetch".source = dots + /fastfetch;
+    "flameshot".source = dots + /flameshot;
+    "hypr".source = dots + /hypr;
+    "kitty".source = dots + /kitty;
+    "rofi".source = dots + /rofi;
+    "waybar".source = dots + /waybar;
+    "images".source = dots + /images;
   };
 }

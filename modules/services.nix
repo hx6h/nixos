@@ -1,0 +1,17 @@
+{ config, pkgs, ... }:
+
+# General system services: SSH, D-Bus and Flatpak. See ./portals.nix for the
+# XDG desktop portals.
+{
+  services.openssh.enable = true;
+  services.dbus.enable = true;
+
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+}
