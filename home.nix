@@ -36,6 +36,14 @@ in
     localsend
     kdePackages.kdenlive
 
+    # themes
+    adw-gtk3
+    adwaita-icon-theme
+    qt6Packages.qt6ct
+    kdePackages.breeze
+    kdePackages.breeze-icons
+    kdePackages.plasma-integration
+
     # development
     opencode
     github-desktop
@@ -46,6 +54,7 @@ in
     fastfetch
     flameshot
     prismlauncher
+    opencode-desktop
   ];
 
   programs.zsh = {
