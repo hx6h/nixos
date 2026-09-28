@@ -6,11 +6,11 @@ configuration {
     drun-match-fields: "name";
     display-run: "menu:";
     display-ssh: "ssh:";
-    display-drun: "apps:";
+    display-drun: "  ";
     display-window: "windows:";
 }
 
-@theme "tokyo"
+@theme "theme"
 
 * {
     font: "Iosevka 12";
@@ -30,41 +30,41 @@ window {
 
     border-radius: 0px;
     border: 1px;
-    border-color: rgba(255, 102, 153, 0.5);
+    border-color: rgba(203, 166, 247, 0.5);
 
-    background-color: rgba(26, 27, 38, 0.85);
+    background-color: rgba(30, 30, 46, 0.85);
     blur: true;
 }
 
 mainbox {
     padding: 1px;
-    background-color: #1a1a1a;
+    background-color: @bg0;
 }
 
 inputbar {
-    background-color: rgba(31, 35, 50, 0.85);
+    background-color: rgba(49, 50, 68, 0.85);
     border-radius: 0px;
     border: 1px;
-    border-color: rgba(255, 102, 153, 0.5);
+    border-color: rgba(203, 166, 247, 0.5);
 
     padding: 8px 16px;
     spacing: 8px;
 }
 
 prompt {
-    text-color: #ff6699;
+    text-color: @accent;
     background-color: transparent;
 }
 
 entry {
     text-color: @fg0;
     placeholder: "search";
-    placeholder-color: #ff8da1;
+    placeholder-color: @magenta;
     background-color: transparent;
 }
 
 listview {
-    background-color: rgba(31, 35, 50, 0.85);
+    background-color: rgba(49, 50, 68, 0.85);
     margin: 12px 0 0;
     columns: 1;
     lines: 4;
@@ -75,7 +75,7 @@ element {
     padding: 6px 2px;
     spacing: 10px;
     border-radius: 0px;
-    background-color: rgba(31, 35, 50, 0.85);
+    background-color: rgba(49, 50, 68, 0.85);
 }
 
 element normal urgent {
@@ -83,12 +83,12 @@ element normal urgent {
 }
 
 element normal active {
-    text-color: #ff6699;
+    text-color: @accent;
 }
 
 element selected normal,
 element selected active {
-    background-color: rgba(255, 102, 153, 0.2);
+    background-color: rgba(203, 166, 247, 0.2);
 }
 
 element-icon {
@@ -105,11 +105,11 @@ message {
     margin: 12px 0 0;
     border-radius: 0px;
     border: 1px;
-    border-color: rgba(255, 102, 153, 0.5);
-    background-color: rgba(31, 35, 50, 0.85);
+    border-color: rgba(203, 166, 247, 0.5);
+    background-color: rgba(49, 50, 68, 0.85);
 }
 
 textbox {
     padding: 8px 24px;
-    background-color: rgba(31, 35, 50, 0.85);
+    background-color: rgba(49, 50, 68, 0.85);
 }

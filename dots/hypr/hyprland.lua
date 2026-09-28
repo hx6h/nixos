@@ -40,8 +40,8 @@ hl.config({
         gaps_out = 10,
         border_size = 2,
         col = {
-            active_border = { colors = { "rgba(ff6699ee)", "rgba(ff8da1ee)" }, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border = "#cba6f7",
+            inactive_border = "#b4befe",
         },
         resize_on_border = false,
         allow_tearing = false,
@@ -59,7 +59,7 @@ hl.config({
             enabled = true,
             range = 10,
             render_power = 2,
-            color = "rgba(00000099)",
+            color = "#181825",
         },
         blur = {
             enabled = true,
@@ -88,7 +88,7 @@ hl.config({
 hl.config({
     misc = {
         force_default_wallpaper = -1,
-        disable_hyprland_logo = false,
+        disable_hyprland_logo = true,
     },
 })
 

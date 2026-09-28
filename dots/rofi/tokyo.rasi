@@ -1,18 +1,20 @@
 * {
-  bg0     : #1a1b1f; /* darker background */
-  bg1     : #1f2027;
-  bg2     : #242531;
-  bg3     : #2c2e42;
-  fg0     : #c0c0c5; /* softer text */
-  fg1     : #a8a8b0;
-  fg2     : #7a7a8a;
-  red     : #f07178;
-  green   : #ff6699;
-  yellow  : #e0b86c;
-  blue    : #7aa2f7;
-  magenta : #ff8da1;
-  cyan    : #4ab8b5;
+    bg0     : #1e1e2e;
+    bg1     : #181825;
+    bg2     : #313244;
+    bg3     : #45475a;
 
-  accent: @green;    /* pink accent */
-  urgent: @red;      /* alerts in red */
+    fg0     : #cdd6f4;
+    fg1     : #bac2de;
+    fg2     : #a6adc8;
+
+    red     : #f38ba8;
+    green   : #a6e3a1;
+    yellow  : #f9e2af;
+    blue    : #89b4fa;
+    magenta : #f5c2e7;
+    cyan    : #94e2d5;
+
+    accent  : #cba6f7;
+    urgent  : #f38ba8;
 }
