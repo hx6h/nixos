@@ -104,9 +104,59 @@ in
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 24;
+    # Without this the cursor never reaches GTK, only X11 and the icon path.
+    gtk.enable = true;
   };
 
-  gtk.enable = true;
+  # GTK apps follow the same fonts and icons as the Qt side. The Catppuccin icon
+  # theme lives in ~/.local/share from KNewStuff, so GTK2 apps are pointed at
+  # that name while GTK3 and GTK4 get the packaged themes below.
+  gtk = {
+    enable = true;
+
+    font = {
+      name = "Iosevka Nerd Font";
+      size = 10;
+    };
+
+    theme = {
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3-dark";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    colorScheme = "dark";
+
+    # adw-gtk3 is a GTK3 theme, so GTK2 apps keep the system widget theme but
+    # do follow the Catppuccin icons and the legacy tuning the options above
+    # have no place for.
+    gtk2 = {
+      theme = null;
+      iconTheme.name = "Catppuccin-Mocha";
+
+      extraConfig = ''
+        gtk-toolbar-style=3
+        gtk-menu-images=1
+        gtk-button-images=1
+        gtk-cursor-blink=1
+        gtk-cursor-blink-time=1000
+        gtk-sound-theme-name="ocean"
+      '';
+    };
+
+    gtk3.extraConfig = {
+      gtk-primary-button-warps-slider = true;
+      gtk-overlay-scrolling = true;
+      gtk-xft-antialias = 1;
+      gtk-xft-hinting = 1;
+      gtk-xft-hintstyle = "hintslight";
+      gtk-xft-rgba = "none";
+    };
+  };
 
   home.file.".zshrc_custom".source = dots + /zsh/zshrc;
   home.file.".oh-my-zsh/themes/hx6h.zsh-theme".source = dots + /zsh/themes/hx6h.zsh-theme;

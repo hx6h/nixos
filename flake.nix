@@ -35,6 +35,7 @@
                 ./home.nix
                 ./modules/git.nix
                 ./modules/nvim.nix
+                ./modules/plasma.nix
               ];
             };
           }
