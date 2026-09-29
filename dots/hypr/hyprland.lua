@@ -159,7 +159,7 @@ local terminal = "kitty"
 local fileManager = "kitty -e yazi"
 local menu = "rofi -show drun"
 local code = "zeditor"
-local browser = "firefox"
+local browser = "librewolf"
 local mc = "prismlauncher"
 
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())

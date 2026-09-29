@@ -35,6 +35,7 @@ in
     wiremix
     localsend
     kdePackages.kdenlive
+    librewolf
 
     # themes
     adw-gtk3
