@@ -80,7 +80,7 @@ in
   };
 
   programs.firefox = {
-    enable = true;
+    enable = false;
 
     languagePacks = [ "en-US" ];
 
