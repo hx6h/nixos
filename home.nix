@@ -58,45 +58,26 @@ in
     opencode-desktop
   ];
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
 
-    initContent = "source ~/.zshrc_custom";
-  };
+      initContent = "source ~/.zshrc_custom";
+    };
 
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-      obs-vaapi
-      obs-gstreamer
-      obs-vkcapture
-    ];
-  };
-
-  programs.firefox = {
-    enable = false;
-
-    languagePacks = [ "en-US" ];
-
-    policies = {
-      DisableTelemetry = true;
-
-      ExtensionSettings = {
-        "uBlock0@raymondhill.net" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/addon-607454-latest.xpi";
-        };
-        "{7a7a4a92-a2a0-41d1-9ba4-62e295fc356d}" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/styl-us/addon-1458055-latest.xpi";
-        };
-      };
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+        obs-vaapi
+        obs-gstreamer
+        obs-vkcapture
+      ];
     };
   };
 
