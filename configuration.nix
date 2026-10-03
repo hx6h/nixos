@@ -13,6 +13,7 @@
     ./modules/networking.nix
     ./modules/portals.nix
     ./modules/services.nix
+    ./modules/virtualisation.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
