@@ -1,9 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, areofyl-fetch, ... }:
 
 let
   dots = ./dots;
 in
 {
+
+  imports = [ areofyl-fetch.homeManagerModules.default ];
+
   home.username = "femboy";
   home.homeDirectory = "/home/femboy";
   home.stateVersion = "26.11";
@@ -78,6 +81,24 @@ in
         obs-gstreamer
         obs-vkcapture
       ];
+    };
+
+    fetch = {
+      enable = true;
+      labelColor = "magenta";
+      info = [
+        "os"
+        "host"
+        "kernel"
+        "cpu"
+        "memory"
+        "disk"
+        "wm"
+        "shell"
+        "terminal"
+      ];
+      speed = 1.0;
+      spin = "xy";
     };
   };
 
