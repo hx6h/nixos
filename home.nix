@@ -20,6 +20,7 @@ in
     zip
     unzip
     vlc
+    proton-vpn
 
     # rice
     waybar
