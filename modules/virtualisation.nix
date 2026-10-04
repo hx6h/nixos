@@ -4,10 +4,10 @@
 # Guests are attached to the libvirt "default" network (bridge virbr0), which
 # gives them an address over DHCP plus NAT and DNS out through the host.
 {
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.enable = false;
 
   # The GUI, preconfigured to connect to the local qemu:///system instance.
-  programs.virt-manager.enable = true;
+  programs.virt-manager.enable = false;
 
   # virt-manager keeps its connections in dconf and the module above seeds them
   # through /etc/dconf/profile/user, which is only read with the dconf GSettings
