@@ -58,7 +58,7 @@ in
     maven
 
     python3
-    uv
+    conda
 
     php
   ];
