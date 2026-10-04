@@ -59,6 +59,7 @@ in
     flameshot
     prismlauncher
     opencode-desktop
+    php
   ];
 
   programs = {
