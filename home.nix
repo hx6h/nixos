@@ -30,15 +30,17 @@ in
     cmatrix
     cava
     oh-my-zsh
+    fastfetch
 
     # apps
-    kitty
     rofi
     bluetui
     wiremix
     localsend
     kdePackages.kdenlive
     librewolf
+    prismlauncher
+    flameshot
 
     # themes
     adw-gtk3
@@ -49,16 +51,15 @@ in
     kdePackages.plasma-integration
 
     # development
-    opencode
-    github-desktop
+    zed-editor
+    opencode-desktop
+
     jdk25
     maven
+
     python3
-    zed-editor
-    fastfetch
-    flameshot
-    prismlauncher
-    opencode-desktop
+    uv
+
     php
   ];
 
