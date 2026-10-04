@@ -27,6 +27,7 @@ hl.env("GDK_BACKEND", "wayland")
 hl.env("WLR_NO_HARDWARE_CURSORS", "1")
 
 hl.monitor({ output = "eDP-1", disabled = true })
+--hl.monitor({ output = "eDP-1", disabled = false })
 hl.monitor({
     output = "HDMI-A-1",
     mode = "1920x1080@60",
@@ -97,6 +98,7 @@ hl.config({
         kb_layout = "cz",
         follow_mouse = 1,
         sensitivity = -1,
+        --sensitivity = 0.5,
         kb_options = "caps:backspace",
         touchpad = {
             natural_scroll = false,
