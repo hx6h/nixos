@@ -42,6 +42,7 @@ in
     librewolf
     prismlauncher
     flameshot
+    obsidian
 
     # themes
     adw-gtk3
