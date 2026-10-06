@@ -1,15 +1,20 @@
 { config, pkgs, ... }:
 
-# limine, with permission to manage the EFI variables itself.
 {
   boot.loader.limine = {
     enable = true;
+
     extraEntries = ''
-            /Windows
-              protocol: efi
-              path: uuid(1c135138-506a-45ed-8352-6455f45e9fea):/EFI/Microsoft/Boot/bootmgfw.efi
-          '';
-    maxGenerations = 5;
+      /Windows
+        protocol: efi
+        path: uuid(2CCD-E100):/EFI/Microsoft/Boot/bootmgfw.efi
+
+      /Arch Linux (HDD)
+        protocol: efi
+        path: uuid(9CCD-DA83):/EFI/Linux/archlinux-linux.efi
+    '';
+
+    maxGenerations = 2;
   };
   boot.loader.efi.canTouchEfiVariables = true;
 }
