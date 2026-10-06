@@ -6,8 +6,6 @@
   services.openssh.enable = true;
   services.dbus.enable = true;
 
-  services.desktopManager.plasma6.enable = false;
-
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
