@@ -23,14 +23,11 @@
   },
 
   "mpris": {
-    "format": "{player_icon} {artist} - {title}",
-    "format-paused": "{player_icon} nothing lol",
-    "player-icons": {
-      "spotify": "󰓇",
-      "default": "󰎆"
-    },
-    "max-length": 35,
-    "tooltip": true
+    "format": "{artist} - {title}",
+    "format-paused": "nothing playing",
+    "max-length": 50,
+    "tooltip": false,
+    "player": "firefox"
   },
 
   "cpu": {

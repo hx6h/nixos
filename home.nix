@@ -21,6 +21,7 @@ in
     unzip
     vlc
     proton-vpn
+    playerctl
 
     # rice
     waybar
