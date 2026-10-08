@@ -6,7 +6,7 @@
   "margin-left": 5,
   "margin-right": 5,
 
-  "modules-left": ["custom/launcher", "custom/lyrics"],
+  "modules-left": ["custom/launcher", "mpris"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["cpu", "memory", "group/internet", "tray", "wireplumber", "battery", "clock"],
 
@@ -24,7 +24,7 @@
 
   "mpris": {
     "format": "{player_icon} {artist} - {title}",
-    "format-paused": "{player_icon} Arch (Btw)",
+    "format-paused": "{player_icon} nothing lol",
     "player-icons": {
       "spotify": "󰓇",
       "default": "󰎆"
@@ -38,7 +38,7 @@
   },
 
   "memory": {
-    "format": "  {used:0.1f}G"
+    "format": "  {used:0.01f}G"
   },
 
   "group/internet": {
