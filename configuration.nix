@@ -88,7 +88,7 @@
 
   programs.zsh.enable = true;
   programs.hyprland.enable = true;
-  services.desktopManager.plasma6.enable = false;
+  services.desktopManager.plasma6.enable = true;
 
   system.stateVersion = "26.11";
 }

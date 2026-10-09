@@ -22,6 +22,7 @@ in
     vlc
     proton-vpn
     playerctl
+    wlogout
 
     # rice
     waybar

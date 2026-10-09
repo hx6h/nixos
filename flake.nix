@@ -31,7 +31,15 @@
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit self nixpkgs home-manager lazyvim areofyl-fetch; };
+        specialArgs = {
+          inherit
+            self
+            nixpkgs
+            home-manager
+            lazyvim
+            areofyl-fetch
+            ;
+        };
 
         modules = [
           ./configuration.nix
@@ -46,7 +54,6 @@
                 ./home.nix
                 ./modules/git.nix
                 ./modules/nvim.nix
-                ./modules/plasma.nix
               ];
             };
           }
