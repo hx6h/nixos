@@ -159,7 +159,6 @@ hl.window_rule({
 local mainMod = "SUPER"
 local terminal = "kitty"
 local fileManager = "kitty -e yazi"
-local menu = "rofi -show drun"
 local code = "zeditor"
 local browser = "librewolf"
 local mc = "prismlauncher"
@@ -170,7 +169,6 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("wlogout -b 2 -c 80 -r 80"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("obsidian"))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.exec_cmd(browser))

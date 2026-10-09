@@ -35,7 +35,6 @@ in
     fastfetch
 
     # apps
-    rofi
     bluetui
     wiremix
     localsend
@@ -44,6 +43,7 @@ in
     prismlauncher
     flameshot
     obsidian
+    telegram-desktop
 
     # themes
     adw-gtk3
@@ -63,6 +63,8 @@ in
     python3
     conda
 
+    nodejs_26
+
     php
   ];
 
@@ -74,6 +76,14 @@ in
       syntaxHighlighting.enable = true;
 
       initContent = "source ~/.zshrc_custom";
+    };
+
+    vicinae = {
+      enable = true;
+      systemd = {
+        enable = true;
+        autoStart = true;
+      };
     };
 
     obs-studio = {
