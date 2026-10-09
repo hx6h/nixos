@@ -186,7 +186,6 @@ in
     "flameshot".source = dots + /flameshot;
     "hypr".source = dots + /hypr;
     "kitty".source = dots + /kitty;
-    "rofi".source = dots + /rofi;
     "waybar".source = dots + /waybar;
     "images".source = dots + /images;
   };

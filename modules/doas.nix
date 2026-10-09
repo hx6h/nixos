@@ -14,4 +14,9 @@
       }
     ];
   };
+
+  environment.etc."gitconfig".text = ''
+      [safe]
+          directory = /etc/nixos
+    '';
 }
