@@ -159,7 +159,7 @@ hl.window_rule({
 local mainMod = "SUPER"
 local terminal = "kitty"
 local fileManager = "kitty -e yazi"
-local code = "zeditor"
+local code = "kitty -e nvim"
 local browser = "librewolf"
 local mc = "prismlauncher"
 
