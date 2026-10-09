@@ -14,6 +14,7 @@
     ./modules/portals.nix
     ./modules/services.nix
     ./modules/virtualisation.nix
+    ./modules/doas.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
