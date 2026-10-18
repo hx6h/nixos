@@ -8,7 +8,7 @@
 
     extraRules = [
       {
-        users = [ "hx6h" ];
+        users = [ "larp" ];
         keepEnv = true;
         persist = true;
       }

@@ -7,8 +7,8 @@ in
 
   imports = [ areofyl-fetch.homeManagerModules.default ];
 
-  home.username = "hx6h";
-  home.homeDirectory = "/home/hx6h";
+  home.username = "larp";
+  home.homeDirectory = "/home/larp";
   home.stateVersion = "26.11";
 
   home.packages = with pkgs; [

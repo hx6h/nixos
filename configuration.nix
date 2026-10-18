@@ -33,10 +33,10 @@
     variant = "";
   };
 
-  users.groups.hx6h = {};
-  users.users.hx6h = {
+  users.groups.larp = {};
+  users.users.larp = {
     isNormalUser = true;
-    group = "hx6h";
+    group = "larp";
     extraGroups = [
       "network"
       "wheel"

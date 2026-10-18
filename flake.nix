@@ -49,7 +49,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "bak";
             home-manager.extraSpecialArgs = { inherit lazyvim areofyl-fetch; };
-            home-manager.users.hx6h = {
+            home-manager.users.larp = {
               imports = [
                 ./home.nix
                 ./modules/git.nix
