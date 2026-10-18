@@ -1,0 +1,154 @@
+* {
+    font-family: "Iosevka", monospace;
+    font-weight: 800;
+    font-size: 12px;
+    color: #cdd6f4;
+}
+
+window#waybar {
+    background: #1e1e2e;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* MODULES */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+/* WORKSPACES */
+
+#workspaces {
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces button {
+    padding: 0 2px;
+    margin: 2px 2px;
+    border-radius: 0;
+    background: transparent;
+    color: #6c7086;
+    transition: all 0.15s ease;
+}
+
+/* active workspace */
+
+#workspaces button.active {
+    color: #cba6f7;
+    border-bottom: 2px solid #cba6f7;
+}
+
+/* hover */
+
+#workspaces button:hover {
+    background: #313244;
+    color: #cdd6f4;
+}
+
+/* urgent */
+
+#workspaces button.urgent {
+    background: #45475a;
+    color: #f38ba8;
+}
+
+/* MPRIS */
+
+#mpris {
+    font-weight: 700;
+    padding: 0 4px;
+    color: #f5c2e7;
+}
+
+/* MODULE COLORS */
+
+#custom-launcher {
+    color: #cba6f7;
+    padding: 0 5px;
+}
+
+#cpu {
+    color: #f38ba8;
+    padding: 0 5px;
+}
+
+#memory {
+    color: #f5c2e7;
+    padding: 0 5px;
+}
+
+#network {
+    color: #89b4fa;
+    padding: 0 5px;
+}
+
+#bluetooth {
+    color: #94e2d5;
+    padding: 0 5px;
+}
+
+#wireplumber {
+    color: #cba6f7;
+    padding: 0 5px;
+}
+
+#battery {
+    color: #a6e3a1;
+    padding: 0 5px;
+}
+
+#clock {
+    color: #cdd6f4;
+    padding: 0 5px;
+}
+
+/* RIGHT SIDE STATES */
+
+#battery.warning {
+    background: #45475a;
+    color: #f9e2af;
+    padding: 1px 5px;
+}
+
+#battery.critical {
+    background: #45475a;
+    color: #f38ba8;
+    padding: 1px 5px;
+}
+
+#wireplumber.muted {
+    color: #6c7086;
+    opacity: 0.7;
+}
+
+/* CPU CAT */
+
+#custom-cpucat {
+    font-family: "Waycat", monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #cba6f7;
+    padding-left: 5px;
+    padding-right: 7px;
+}
+
+/* TOOLTIP */
+
+tooltip {
+    background: #181825;
+    border: 1px solid #45475a;
+    border-radius: 0;
+    padding: 5px 8px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+    font-size: 11px;
+}

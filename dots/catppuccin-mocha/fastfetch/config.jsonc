@@ -1,0 +1,96 @@
+{
+  "logo": {
+    "type": "kitty",
+    "source": ".config/images/fastfetch.jpg",
+    "height": 13,
+    "padding": {
+      "top": 2,
+      "left": 4
+    }
+  },
+
+  "display": {
+    "key": {
+      "width": 15
+    },
+    "color": "#cba6f7",
+    "separator": "~>"
+  },
+
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "format": "{6}"
+    },
+    "separator",
+    {
+      "type": "os",
+      "key": "OS       ",
+      "keyColor": "#cba6f7"
+    },
+    {
+      "type": "kernel",
+      "key": "Kernel   ",
+      "keyColor": "#cba6f7",
+      "format": "{1} {2}"
+    },
+    {
+      "type": "users",
+      "key": "User     ",
+      "keyColor": "#cba6f7"
+    },
+
+    "break",
+
+    {
+      "type": "uptime",
+      "key": "Uptime   ",
+      "keyColor": "#89b4fa"
+    },
+    {
+      "type": "board",
+      "key": "Device   ",
+      "keyColor": "#89b4fa"
+    },
+    {
+      "type": "bios",
+      "key": "Bios     ",
+      "keyColor": "#89b4fa",
+      "format": "{4} - {1}"
+    },
+    {
+      "type": "cpu",
+      "key": "CPU      ",
+      "temp": true,
+      "showPeCoreCount": true,
+      "keyColor": "#f38ba8",
+      "format": "{1}"
+    },
+    {
+      "type": "gpu",
+      "key": "GPU      ",
+      "temp": true,
+      "showPeCoreCount": true,
+      "keyColor": "#f38ba8",
+      "format": "{1} {2} {4}"
+    },
+    {
+      "type": "memory",
+      "key": "RAM      ",
+      "temp": true,
+      "showPeCoreCount": true,
+      "keyColor": "#a6e3a1",
+      "format": "{1} / {2} {3}"
+    },
+
+    "break",
+
+    {
+      "type": "Disk",
+      "key": "Disk     ",
+      "keyColor": "#a6e3a1",
+      "format": "{1} / {2} {3} "
+    }
+  ]
+}
