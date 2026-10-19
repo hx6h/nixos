@@ -47,7 +47,7 @@ in
     localsend
     kdePackages.kdenlive
     rofi-screenshot
-    brave
+    librewolf
     prismlauncher
     obsidian
     telegram-desktop
