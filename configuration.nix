@@ -50,6 +50,7 @@
   # Packages every user of the system gets. Per-user applications are
   # installed by Home Manager in ./home.nix instead.
   environment.systemPackages = with pkgs; [
+    gcc
     git
     curl
     kitty
