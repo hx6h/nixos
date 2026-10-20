@@ -70,7 +70,8 @@ in
     jdk25
     maven
 
-    python3
+    python314
+    python314Packages.pip
 
     nodejs_26
 
