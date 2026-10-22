@@ -1,11 +1,8 @@
 { config, pkgs, ... }:
 
-# System composition. Everything system wide that is not big enough to deserve
-# its own file in ./modules lives here.
 {
   imports = [
     ./hardware-configuration.nix
-
     ./modules/audio.nix
     ./modules/bluetooth.nix
     ./modules/bootloader.nix
@@ -17,45 +14,24 @@
     ./modules/doas.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
   time.timeZone = "Europe/Prague";
-
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "cz-lat2";
-  services.xserver.xkb = {
-    layout = "cz";
-    variant = "";
-  };
+  services.xserver.xkb = { layout = "cz"; variant = ""; };
 
   users.groups.larp = {};
   users.users.larp = {
     isNormalUser = true;
     group = "larp";
-    extraGroups = [
-      "network"
-      "wheel"
-      "networkmanager"
-      "video"
-      "audio"
-    ];
+    extraGroups = [ "network" "wheel" "networkmanager" "video" "audio" ];
     shell = pkgs.zsh;
   };
 
-  # Packages every user of the system gets. Per-user applications are
-  # installed by Home Manager in ./home.nix instead.
   environment.systemPackages = with pkgs; [
-    gcc
-    git
-    curl
-    kitty
-    yazi
-    xdg-desktop-portal-termfilechooser
+    gcc git curl kitty yazi xdg-desktop-portal-termfilechooser
   ];
 
   environment.sessionVariables = {
@@ -64,33 +40,16 @@
     TERMCMD = "kitty --class=file_chooser";
   };
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.iosevka
-    noto-fonts-color-emoji
-  ];
+  fonts.packages = with pkgs; [ nerd-fonts.iosevka noto-fonts-color-emoji ];
+  fonts.fontconfig.defaultFonts.monospace = [ "Iosevka Nerd Font" "Noto Color Emoji" ];
 
-  fonts.fontconfig.defaultFonts = {
-    monospace = [
-      "Iosevka Nerd Font"
-      "Noto Color Emoji"
-    ];
-  };
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
+  hardware.graphics = { enable = true; enable32Bit = true; };
   hardware.amdgpu.initrd.enable = true;
-
   hardware.enableRedistributableFirmware = true;
 
-  # Give realtime audio clients a lower rtkit scheduling threshold.
   security.rtkit = {
     enable = true;
-    args = [
-      "--no-canary"
-      "--rttime-usec-max=2000000"
-    ];
+    args = [ "--no-canary" "--rttime-usec-max=2000000" ];
   };
 
   systemd.user.units."graphical-session.target".text = ''
@@ -100,10 +59,8 @@
   '';
 
   services.displayManager.ly.enable = true;
-
   programs = {
     zsh.enable = true;
-    mango.enable = true;
     nix-ld.enable = true;
   };
 
