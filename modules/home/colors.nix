@@ -18,6 +18,8 @@ let
     { token = "@URGENT@"; value = palette.urgent; }
     { token = "@SUCCESS@"; value = palette.success; }
     { token = "@WARNING@"; value = palette.warning; }
+    { token = "@TTY_CLOCK_COLOR@"; value = palette.ttyClockColor; }
+    { token = "@CMATRIX_COLOR@"; value = palette.cmatrixColor; }
     { token = "@BACKGROUND_HEX@"; value = "0x${builtins.substring 1 6 palette.background}ff"; }
     { token = "@SURFACE_HEX@"; value = "0x${builtins.substring 1 6 palette.surface}ff"; }
     { token = "@SURFACE_RAISED_HEX@"; value = "0x${builtins.substring 1 6 palette.surfaceRaised}ff"; }
