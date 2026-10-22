@@ -28,11 +28,30 @@
     theme = { package = pkgs.adw-gtk3; name = "adw-gtk3-dark"; };
     iconTheme = { package = pkgs.adwaita-icon-theme; name = "Adwaita"; };
     colorScheme = "dark";
+    gtk2 = {
+      theme = null;
+      iconTheme.name = "Adwaita";
+      extraConfig = ''
+        gtk-toolbar-style=3
+        gtk-menu-images=1
+        gtk-button-images=1
+        gtk-cursor-blink=1
+        gtk-cursor-blink-time=1000
+        gtk-sound-theme-name="ocean"
+      '';
+    };
+    gtk3.extraConfig = {
+      gtk-primary-button-warps-slider = true;
+      gtk-overlay-scrolling = true;
+      gtk-xft-antialias = 1;
+      gtk-xft-hinting = 1;
+      gtk-xft-hintstyle = "hintslight";
+      gtk-xft-rgba = "none";
+    };
   };
 
   programs.fetch = {
     enable = true;
-    labelColor = "white";
     info = [ "os" "host" "kernel" "cpu" "memory" "disk" "wm" "shell" "terminal" ];
     speed = 1.0;
     spin = "xy";
@@ -54,6 +73,7 @@
     "kitty/kitty.conf".source = ./dots/dwm_qs-monomodern/kitty/kitty.conf;
     "images".source = ./dots/mango-monochrome/images;
     "quickshell/dwm_qs-monomodern/shell.qml".source = ./desktops/dwm_qs-monomodern/shell.qml;
+    "quickshell/dwm_qs-monomodern/MonoButton.qml".source = ./desktops/dwm_qs-monomodern/MonoButton.qml;
   };
 
   home.sessionVariables = {
