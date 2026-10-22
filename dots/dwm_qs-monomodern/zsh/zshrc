@@ -13,8 +13,8 @@ plugins=(git)
 source "$ZSH/oh-my-zsh.sh"
 
 alias a="cava"
-alias b="cmatrix -C white -B"
-alias c="tty-clock -s -c -C 7"
+alias b="cmatrix -C @CMATRIX_COLOR@ -B"
+alias c="tty-clock -s -c -C @TTY_CLOCK_COLOR@"
 alias nrs="doas nixos-rebuild switch --flake /etc/nixos#nixos"
 alias cdnix="cd /etc/nixos"
 alias n="nvim"
