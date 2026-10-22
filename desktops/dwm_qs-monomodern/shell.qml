@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
 import Quickshell.Services.Notifications
@@ -46,43 +47,67 @@ ShellRoot {
       radius: 8
       color: Mono.Theme.surface
       border.color: Mono.Theme.border
-      Row {
+      RowLayout {
         anchors { fill: parent; leftMargin: 12; rightMargin: 12 }
-        spacing: 12
-        Text { anchors.verticalCenter: parent.verticalCenter; text: "hx"; color: Mono.Theme.foreground; font.bold: true; font.pixelSize: 14 }
-        Rectangle { width: 1; height: 18; anchors.verticalCenter: parent.verticalCenter; color: Mono.Theme.border }
-        Text { anchors.verticalCenter: parent.verticalCenter; text: "dwl · mono"; color: Mono.Theme.muted; font.pixelSize: 11 }
-        Item { width: 1; height: 1 }
-        Text { anchors.verticalCenter: parent.verticalCenter; text: Qt.formatDateTime(clock.now, "ddd dd MMM  HH:mm"); color: Mono.Theme.foreground; font.pixelSize: 12 }
+        spacing: 10
+
+        Text {
+          Layout.alignment: Qt.AlignVCenter
+          text: "HX6H"
+          color: Mono.Theme.foreground
+          font.bold: true
+          font.letterSpacing: 1.2
+          font.pixelSize: 12
+        }
+        Rectangle {
+          Layout.alignment: Qt.AlignVCenter
+          width: 1
+          height: 18
+          color: Mono.Theme.border
+        }
+        Text {
+          Layout.alignment: Qt.AlignVCenter
+          text: "dwl"
+          color: Mono.Theme.muted
+          font.pixelSize: 11
+        }
+        Item { Layout.fillWidth: true }
+
         Timer {
           id: clock
           property date now: new Date()
-          interval: 15000
+          interval: 30000
           repeat: true
           running: true
           triggeredOnStart: true
           onTriggered: now = new Date()
         }
+        Text {
+          Layout.alignment: Qt.AlignVCenter
+          text: Qt.formatDateTime(clock.now, "ddd dd MMM  ·  HH:mm")
+          color: Mono.Theme.foreground
+          font.pixelSize: 12
+        }
         Button {
-          anchors.verticalCenter: parent.verticalCenter
-          text: "bell"
+          Layout.alignment: Qt.AlignVCenter
+          text: "NOTIFY"
           onClicked: root.notificationsOpen = !root.notificationsOpen
-          contentItem: Text { text: parent.text; color: Mono.Theme.foreground; font.pixelSize: 11; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
-          background: Rectangle { radius: 5; color: parent.down ? Mono.Theme.surfaceRaised : "transparent" }
+          contentItem: Text { text: parent.text; color: Mono.Theme.foreground; font.pixelSize: 10; font.letterSpacing: 0.6; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
+          background: Rectangle { radius: 5; color: parent.down ? Mono.Theme.surfaceRaised : "transparent"; border.color: Mono.Theme.border }
         }
         Button {
-          anchors.verticalCenter: parent.verticalCenter
-          text: "ctrl"
+          Layout.alignment: Qt.AlignVCenter
+          text: "CONTROL"
           onClicked: root.controlOpen = !root.controlOpen
-          contentItem: Text { text: parent.text; color: Mono.Theme.foreground; font.pixelSize: 11; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
-          background: Rectangle { radius: 5; color: parent.down ? Mono.Theme.surfaceRaised : "transparent" }
+          contentItem: Text { text: parent.text; color: Mono.Theme.foreground; font.pixelSize: 10; font.letterSpacing: 0.6; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
+          background: Rectangle { radius: 5; color: parent.down ? Mono.Theme.surfaceRaised : "transparent"; border.color: Mono.Theme.border }
         }
         Button {
-          anchors.verticalCenter: parent.verticalCenter
-          text: "+"
+          Layout.alignment: Qt.AlignVCenter
+          text: "＋"
           onClicked: root.launcherOpen = !root.launcherOpen
-          contentItem: Text { text: parent.text; color: Mono.Theme.foreground; font.pixelSize: 16; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
-          background: Rectangle { radius: 5; color: parent.down ? Mono.Theme.surfaceRaised : "transparent" }
+          contentItem: Text { text: parent.text; color: Mono.Theme.foreground; font.pixelSize: 18; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
+          background: Rectangle { radius: 5; color: parent.down ? Mono.Theme.surfaceRaised : "transparent"; border.color: Mono.Theme.border }
         }
       }
     }
