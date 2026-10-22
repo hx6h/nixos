@@ -7,8 +7,7 @@
 
     # One compositor + one shell. No Waybar/Rofi/Mako/swaybg/Hyprpaper.
     dwl quickshell
-    xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
-    wl-clipboard grim slurp brightnessctl libnotify
+    # Portals are configured system-wide in modules/portals.nix.
 
     # Existing apps and development tools remain installed.
     bluetui wiremix localsend kdePackages.kdenlive flameshot librewolf
