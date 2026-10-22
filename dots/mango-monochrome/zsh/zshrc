@@ -21,5 +21,9 @@ alias a="cava"
 alias b="cmatrix -C white -B"
 alias c="tty-clock -s -c -C 7"
 
+alias nrs="doas nixos-rebuild switch --flake /etc/nixos#nixos"
+alias cdnix="cd /etc/nixos"
+alias n="nvim"
+
 fastfetch
 
