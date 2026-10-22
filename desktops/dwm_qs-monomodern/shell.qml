@@ -141,7 +141,6 @@ ShellRoot {
           color: Mono.Theme.foreground
           placeholderTextColor: Mono.Theme.dim
           onTextChanged: root.searchText = text
-          Component.onCompleted: forceActiveFocus()
           background: Rectangle { radius: 6; color: Mono.Theme.surface; border.color: Mono.Theme.border }
           Keys.onEscapePressed: root.launcherOpen = false
         }
