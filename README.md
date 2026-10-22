@@ -16,7 +16,7 @@ Available palettes:
 - `dots/mango-monochrome/colors.nix`: existing MangoWC palette.
 - `dots/catppuccin-mocha/colors.nix`: Catppuccin Mocha palette.
 
-To switch palettes, change the import at the top of `modules/home/colors.nix`. The generated application files then inherit that palette without maintaining separate hex codes.
+To switch palettes, change the import in `desktops/dwm_qs-monomodern/colors.nix`. Home Manager then renders all generated app configs from that one palette. The generated application files then inherit that palette without maintaining separate hex codes.
 
 ## Build safely
 
