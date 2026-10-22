@@ -185,10 +185,15 @@ ShellRoot {
         anchors.fill: parent
         anchors.margins: 14
         spacing: 10
-        Row {
+        RowLayout {
           width: parent.width
-          Text { text: "NOTIFICATIONS"; color: Mono.Theme.foreground; font.bold: true; font.pixelSize: 12 }
-          Item { width: 1; height: 1 }
+          Text {
+            Layout.fillWidth: true
+            text: "NOTIFICATIONS"
+            color: Mono.Theme.foreground
+            font.bold: true
+            font.pixelSize: 12
+          }
           Mono.MonoButton { text: "×"; onClicked: root.notificationsOpen = false }
         }
         ListView {
