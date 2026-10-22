@@ -1,7 +1,7 @@
 { ... }:
 let
-  # Select the active dot theme here. All generated application colors flow
-  # from this one palette; switching themes means changing this import only.
+  # The desktop palette is the source of truth. Change the import in
+  # desktops/dwm_qs-monomodern/colors.nix to switch every generated app theme.
   palette = import ../../desktops/dwm_qs-monomodern/colors.nix;
   templates = ../../dots/dwm_qs-monomodern;
 
