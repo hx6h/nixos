@@ -120,6 +120,7 @@ ShellRoot {
     color: Qt.rgba(Mono.Theme.background.r, Mono.Theme.background.g, Mono.Theme.background.b, 0.78)
     WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.namespace: "dwm_qs-monomodern-launcher"
+    onVisibleChanged: if (visible) search.forceActiveFocus()
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
     exclusiveZone: -1
     Rectangle {
@@ -140,6 +141,7 @@ ShellRoot {
           color: Mono.Theme.foreground
           placeholderTextColor: Mono.Theme.dim
           onTextChanged: root.searchText = text
+          Component.onCompleted: forceActiveFocus()
           background: Rectangle { radius: 6; color: Mono.Theme.surface; border.color: Mono.Theme.border }
           Keys.onEscapePressed: root.launcherOpen = false
         }
@@ -188,7 +190,7 @@ ShellRoot {
           width: parent.width
           Text { text: "NOTIFICATIONS"; color: Mono.Theme.foreground; font.bold: true; font.pixelSize: 12 }
           Item { width: 1; height: 1 }
-          Button { text: "×"; onClicked: root.notificationsOpen = false }
+          Mono.MonoButton { text: "×"; onClicked: root.notificationsOpen = false }
         }
         ListView {
           width: parent.width
@@ -210,7 +212,7 @@ ShellRoot {
               spacing: 5
               Text { width: parent.width; text: modelData.appName + " · " + modelData.summary; color: Mono.Theme.foreground; font.bold: true; wrapMode: Text.WordWrap }
               Text { width: parent.width; text: modelData.body; color: Mono.Theme.muted; wrapMode: Text.WordWrap; textFormat: Text.PlainText }
-              Button { text: "Dismiss"; onClicked: modelData.dismiss() }
+              Mono.MonoButton { text: "Dismiss"; onClicked: modelData.dismiss() }
             }
           }
         }
@@ -243,16 +245,16 @@ ShellRoot {
         Text { text: "Audio"; color: Mono.Theme.muted; font.pixelSize: 11 }
         Row {
           spacing: 8
-          Button { text: "−"; onClicked: volumeDown.running = true }
-          Button { text: "Mute"; onClicked: mute.running = true }
-          Button { text: "+"; onClicked: volumeUp.running = true }
+          Mono.MonoButton { text: "−"; onClicked: volumeDown.running = true }
+          Mono.MonoButton { text: "Mute"; onClicked: mute.running = true }
+          Mono.MonoButton { text: "+"; onClicked: volumeUp.running = true }
         }
         Text { text: "System"; color: Mono.Theme.muted; font.pixelSize: 11 }
-        Button { text: "Bluetooth"; onClicked: bluetooth.running = true }
-        Button { text: "Network"; onClicked: network.running = true }
-        Button { text: "Audio mixer"; onClicked: mixer.running = true }
-        Button { text: "Lock session"; onClicked: lock.running = true }
-        Button { text: "Close"; onClicked: root.controlOpen = false }
+        Mono.MonoButton { text: "Bluetooth"; onClicked: bluetooth.running = true }
+        Mono.MonoButton { text: "Network"; onClicked: network.running = true }
+        Mono.MonoButton { text: "Audio mixer"; onClicked: mixer.running = true }
+        Mono.MonoButton { text: "Lock session"; onClicked: lock.running = true }
+        Mono.MonoButton { text: "Close"; onClicked: root.controlOpen = false }
       }
     }
   }
