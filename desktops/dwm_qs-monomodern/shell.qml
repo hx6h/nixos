@@ -22,7 +22,7 @@ ShellRoot {
     exclusiveZone: -1
     Image {
       anchors.fill: parent
-      source: "file:///home/larp/.config/images/wall2.png"
+      source: "file://" + Quickshell.env("HOME") + "/.config/images/wall2.png"
       fillMode: Image.PreserveAspectCrop
       asynchronous: true
       cache: true
