@@ -1,0 +1,3 @@
+module DwmQsMonoModern
+singleton Theme 1.0 Theme.qml
+MonoButton 1.0 MonoButton.qml
