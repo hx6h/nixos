@@ -1,0 +1,10 @@
+/* Generated from dots/dwm_qs-monomodern/colors.nix. */
+@define-color theme_bg_color @BACKGROUND@;
+@define-color theme_base_color @BACKGROUND@;
+@define-color theme_fg_color @FOREGROUND@;
+@define-color theme_text_color @FOREGROUND@;
+@define-color theme_selected_bg_color @SURFACE_RAISED@;
+@define-color theme_selected_fg_color @FOREGROUND@;
+@define-color borders @BORDER@;
+@define-color insensitive_fg_color @DIM@;
+@define-color insensitive_bg_color @SURFACE@;
