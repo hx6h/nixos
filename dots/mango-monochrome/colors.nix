@@ -1,5 +1,7 @@
 {
   name = "mango-monochrome";
+  ttyClockColor = "7";
+  cmatrixColor = "white";
   background = "#171717";
   surface = "#202020";
   surfaceRaised = "#303030";
