@@ -1,5 +1,7 @@
 {
   name = "catppuccin-mocha";
+  ttyClockColor = "5";
+  cmatrixColor = "magenta";
   background = "#1e1e2e";
   surface = "#181825";
   surfaceRaised = "#313244";
