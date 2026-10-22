@@ -1,0 +1,43 @@
+configuration {
+  modes: "drun";
+  sorting-method: "normal";
+  show-icons: true;
+  matching: "fuzzy";
+  drun-match-fields: "name,generic,exec";
+  display-drun: " apps ";
+}
+* {
+  font: "Iosevka Nerd Font 11";
+  background-color: transparent;
+  text-color: @FOREGROUND@;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+window {
+  location: center;
+  width: 520px;
+  y-offset: -24px;
+  border-radius: 12px;
+  border: 1px;
+  border-color: @BORDER@;
+  background-color: @BACKGROUND@;
+}
+mainbox { padding: 10px; background-color: @BACKGROUND@; }
+inputbar {
+  background-color: @SURFACE@;
+  border-radius: 7px;
+  border: 1px;
+  border-color: @BORDER@;
+  padding: 10px 12px;
+  spacing: 8px;
+}
+prompt { text-color: @ACCENT@; }
+entry { text-color: @FOREGROUND@; placeholder: "Search applications"; placeholder-color: @DIM@; }
+listview { background-color: @BACKGROUND@; margin: 8px 0 0; columns: 1; lines: 7; fixed-height: false; }
+element { padding: 9px 10px; spacing: 6px; border-radius: 6px; }
+element normal.normal, element alternate.normal { background-color: @BACKGROUND@; text-color: @MUTED@; }
+element normal.urgent { background-color: @SURFACE_RAISED@; text-color: @URGENT@; }
+element normal.active { text-color: @ACCENT@; }
+element selected.normal, element selected.active { background-color: @SURFACE_RAISED@; text-color: @FOREGROUND@; }
+element selected.urgent { background-color: @BORDER@; text-color: @URGENT@; }
