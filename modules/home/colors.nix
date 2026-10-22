@@ -39,6 +39,8 @@ let
       (builtins.readFile (templates + "/${file}"));
 in
 {
+  programs.fetch.labelColor = if palette.name == "catppuccin-mocha" then "magenta" else "white";
+
   # Quickshell's singleton is the UI palette for every panel and popup.
   xdg.configFile."quickshell/dwm_qs-monomodern/Theme.qml".text = ''
     pragma Singleton
