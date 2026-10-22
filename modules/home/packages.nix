@@ -6,7 +6,7 @@
     playerctl appimage-run libice flameshot libelf
 
     # Terminal and shell utilities already referenced by the dotfiles.
-    kitty yazi git curl cava oh-my-zsh fastfetch tty-clock cmatrix
+    cava oh-my-zsh fastfetch tty-clock cmatrix
 
     # One active compositor and one desktop shell.
     dwl quickshell
