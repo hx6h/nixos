@@ -1,21 +1,27 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # Core tools already used in the active dotfiles.
-    kitty yazi git curl btop playerctl imagemagick ntfs3g zip unzip
-    cava fastfetch oh-my-zsh
+    # System and everyday tools retained from the existing setup.
+    dbus ntfs3g imagemagick btop zip unzip vlc proton-vpn veracrypt
+    playerctl appimage-run libice flameshot libelf
 
-    # One compositor + one shell. No Waybar/Rofi/Mako/swaybg/Hyprpaper.
+    # Terminal and shell utilities already referenced by the dotfiles.
+    kitty yazi git curl cava oh-my-zsh fastfetch tty-clock cmatrix
+
+    # One active compositor and one desktop shell.
     dwl quickshell
-    # Portals are configured system-wide in modules/portals.nix.
 
-    # Existing apps and development tools remain installed.
-    bluetui wiremix localsend kdePackages.kdenlive flameshot librewolf
-    prismlauncher obsidian telegram-desktop zed-editor opencode pycharm
-    jetbrains.idea jdk25 maven python314 python314Packages.pip nodejs_26 php
+    # Existing applications.
+    bluetui wiremix localsend kdePackages.kdenlive librewolf
+    prismlauncher obsidian telegram-desktop
 
-    # Existing theme, cursor and font stack.
+    # Existing theme, cursor, and font stack.
     adw-gtk3 adwaita-icon-theme qt6Packages.qt6ct
+    kdePackages.breeze kdePackages.breeze-icons kdePackages.plasma-integration
     bibata-cursors nerd-fonts.iosevka noto-fonts-color-emoji
+
+    # Existing development tools.
+    zed-editor opencode pycharm jetbrains.idea
+    jdk25 maven python314 python314Packages.pip nodejs_26 php
   ];
 }
