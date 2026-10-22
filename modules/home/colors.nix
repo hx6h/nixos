@@ -63,6 +63,7 @@ in
   xdg.configFile."quickshell/dwm_qs-monomodern/qmldir".text = ''
     module DwmQsMonoModern
     singleton Theme 1.0 Theme.qml
+    MonoButton 1.0 MonoButton.qml
   '';
 
   # Templates are rendered at evaluation time, so every application uses the
@@ -79,3 +80,4 @@ in
 
   home.file.".oh-my-zsh/themes/hx6h.zsh-theme".text = render "zsh/themes/hx6h.zsh-theme";
 }
+
