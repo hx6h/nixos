@@ -1,6 +1,7 @@
 { pkgs, areofyl-fetch, ... }:
 {
   imports = [ areofyl-fetch.homeManagerModules.default ./modules/home ];
+
   home.username = "larp";
   home.homeDirectory = "/home/larp";
   home.stateVersion = "26.11";
@@ -12,6 +13,7 @@
     syntaxHighlighting.enable = true;
     initContent = "source ~/.zshrc_custom";
   };
+
   home.pointerCursor = {
     enable = true;
     package = pkgs.bibata-cursors;
@@ -19,6 +21,7 @@
     size = 24;
     gtk.enable = true;
   };
+
   gtk = {
     enable = true;
     font = { name = "Iosevka Nerd Font"; size = 10; };
@@ -26,6 +29,7 @@
     iconTheme = { package = pkgs.adwaita-icon-theme; name = "Adwaita"; };
     colorScheme = "dark";
   };
+
   programs.fetch = {
     enable = true;
     labelColor = "white";
@@ -33,6 +37,7 @@
     speed = 1.0;
     spin = "xy";
   };
+
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [
@@ -41,18 +46,23 @@
     ];
   };
 
-  home.file.".zshrc_custom".source = ./dots/mango-monochrome/zsh/zshrc;
-  home.file.".oh-my-zsh/themes/hx6h.zsh-theme".source = ./dots/mango-monochrome/zsh/themes/hx6h.zsh-theme;
+  # Keep the currently used wallpapers while giving the new profile ownership
+  # of its shell, terminal settings, and shell initialization.
+  home.file.".zshrc_custom".source = ./dots/dwm_qs-monomodern/zsh/zshrc;
+
   xdg.configFile = {
-    "cava".source = ./dots/mango-monochrome/cava;
-    "fastfetch".source = ./dots/mango-monochrome/fastfetch;
-    "kitty/kitty.conf".source = ./dots/mango-monochrome/kitty/kitty.conf;
+    "kitty/kitty.conf".source = ./dots/dwm_qs-monomodern/kitty/kitty.conf;
     "images".source = ./dots/mango-monochrome/images;
     "quickshell/dwm_qs-monomodern/shell.qml".source = ./desktops/dwm_qs-monomodern/shell.qml;
   };
+
   home.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "qt6ct";
+    GTK_THEME = "adw-gtk3-dark";
+    XCURSOR_THEME = "Bibata-Modern-Classic";
+    XCURSOR_SIZE = "24";
     XDG_CURRENT_DESKTOP = "dwm_qs-monomodern";
+    XDG_SESSION_TYPE = "wayland";
   };
 }
