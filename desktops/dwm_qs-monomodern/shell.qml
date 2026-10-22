@@ -67,7 +67,7 @@ ShellRoot {
         }
         Text {
           Layout.alignment: Qt.AlignVCenter
-          text: "dwl"
+          text: "MONO MODERN"
           color: Mono.Theme.muted
           font.pixelSize: 11
         }
