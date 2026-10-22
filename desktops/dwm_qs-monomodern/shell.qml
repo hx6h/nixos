@@ -92,7 +92,7 @@ ShellRoot {
   PanelWindow {
     visible: root.launcherOpen
     anchors { top: true; left: true; right: true; bottom: true }
-    color: "#80000000"
+    color: Qt.rgba(Mono.Theme.background.r, Mono.Theme.background.g, Mono.Theme.background.b, 0.78)
     WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.namespace: "dwm_qs-monomodern-launcher"
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
