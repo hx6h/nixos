@@ -8,4 +8,6 @@ Zsh theme files.
 Templates use `@TOKEN@` placeholders. Home Manager renders them from the
 palette, so applications do not drift into separate, hard-coded themes.
 The profile intentionally uses dwl + Quickshell instead of running a second
-bar, launcher, wallpaper daemon or notification daemon.
+bar, launcher, wallpaper daemon or notification daemon. Wallpaper images are
+reused from the existing mango-monochrome image set to avoid duplicating large
+binary assets in Git.
