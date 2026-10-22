@@ -1,5 +1,7 @@
 {
   name = "dwm_qs-monomodern";
+  ttyClockColor = "7";
+  cmatrixColor = "white";
   background = "#101010";
   surface = "#181818";
   surfaceRaised = "#222222";
