@@ -12,6 +12,22 @@ ShellRoot {
   property bool notificationsOpen: false
   property string searchText: ""
 
+  // Wallpaper runs inside Quickshell instead of spawning swaybg.
+  PanelWindow {
+    anchors { top: true; left: true; right: true; bottom: true }
+    color: Mono.Theme.background
+    WlrLayershell.layer: WlrLayer.Background
+    WlrLayershell.namespace: "dwm_qs-monomodern-wallpaper"
+    exclusiveZone: -1
+    Image {
+      anchors.fill: parent
+      source: "file:///home/larp/.config/images/wall2.png"
+      fillMode: Image.PreserveAspectCrop
+      asynchronous: true
+      cache: true
+    }
+  }
+
   NotificationServer {
     id: notificationServer
     keepOnReload: true
