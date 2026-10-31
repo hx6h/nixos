@@ -1,14 +1,16 @@
 {
-  "position": "top",
   "layer": "top",
-  "width": "70%",
-  "margin": "10px 0 0 0",
-  "spacing": 0,
+  "position": "top",
+  "spacing": 3,
+  "height": 1,
+  "margin-top": 7,
+  "margin-left": 400,
+  "margin-right": 400,
 
   "modules-left": [
-    "custom/launcher",
+    //"custom/launcher",
+        "ext/workspaces",
     "cpu",
-    "ext/workspaces",
     "memory"
   ],
   "modules-center": [
@@ -19,6 +21,7 @@
     "group/internet",
     "wireplumber",
     "battery",
+    "tray",
     "clock",
   ],
 
@@ -52,12 +55,12 @@
       "format": "{icon}{0}",
       "hide-empty-text": true,
       "format-icons": {
-        "playing": " ",
-        "paused": " ",
-        "lyric": " ",
-        "music": "󰝚 ",
-        "no_lyric": " ",
-        "getting": " ",
+        "playing": "  ",
+        "paused": "  ",
+        "lyric": "",
+        "music": "",
+        "no_lyric": "",
+        "getting": "  ",
       },
       "exec-if": "which waybar-lyric",
       "exec": "waybar-lyric --quiet",
