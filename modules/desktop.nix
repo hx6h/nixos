@@ -22,7 +22,6 @@ in
       libva
       libva-utils
       mesa-demos
-
       kitty
       yazi
       slurp
@@ -75,6 +74,9 @@ in
         chooser_type = "simple";
         chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
         max_fps = 30;
+        output_width = 1280;
+        output_height = 720;
+        video_bitrate = 4000;
       };
     };
   };
