@@ -1,0 +1,116 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 3,
+  "height": 1,
+  "margin-top": 7,
+  "margin-left": 400,
+  "margin-right": 400,
+
+  "modules-left": [
+    "custom/launcher",
+    "cpu",
+    "ext/workspaces",
+    "memory"
+  ],
+  "modules-center": [
+    "mpris"
+  ],
+
+  "modules-right": [
+    "group/internet",
+    "wireplumber",
+    "battery",
+    "clock",
+  ],
+
+  "custom/launcher": {
+    "format": "  ",
+    "on-click": "rofi -show drun"
+  },
+
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "on-click": "kitty -e btop"
+  },
+
+  "memory": {
+    "format": "  {used:0.01f}G",
+    "on-click": "kitty -e btop"
+  },
+
+  "ext/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "default": "○",
+      "active": "●",
+      "urgent": "●"
+    }
+  },
+
+  "mpris": {
+    "format": " {title} ",
+    "format-paused": "󰐊 {title} ",
+    "max-length": 60,
+    "tooltip": false,
+    "player": "brave"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 6
+  },
+
+  "group/internet": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "alt",
+      "click-to-reveal": false
+    },
+    "modules": ["network", "bluetooth"]
+  },
+
+  "network": {
+    "format-wifi": "󰤨 ",
+    "format-ethernet": "󰒢 ",
+    "format-disconnected": "󰤭 ",
+    "on-click": "kitty -e nmtui"
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂯 {num_connections}",
+    "tooltip": true,
+    "on-click": "kitty -e bluetui"
+  },
+
+  "wireplumber": {
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "on-click": "kitty -e wiremix",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"],
+      "headphones": "󰋋",
+      "headset": "󰋎"
+    }
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󱟦 {capacity}%",
+    "format-full": "󰁹 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+}

@@ -1,0 +1,250 @@
+@define-color selected-text #98BB6C;
+@define-color text #DCD7BA;
+@define-color base #22281F;
+@define-color border #71CEAD;
+@define-color foreground #BADCBB;
+@define-color background #21281F;
+@define-color muted #798A72;
+@define-color accent #98BB6C;
+
+* {
+  all: unset;
+}
+
+* {
+  font-family: monospace;
+  font-size: 15px;
+  color: @text;
+}
+
+scrollbar {
+  opacity: 0;
+}
+
+.normal-icons {
+  -gtk-icon-size: 16px;
+}
+
+.large-icons {
+  -gtk-icon-size: 32px;
+}
+
+/* Main window */
+
+.box-wrapper {
+  background: alpha(@base, 0.98);
+  padding: 20px;
+  border: 2px solid @border;
+}
+
+/* Search */
+
+.search-container {
+  background: @base;
+  padding: 10px;
+  border-bottom: 1px solid @border;
+  margin-bottom: 8px;
+}
+
+.input {
+  color: @text;
+  caret-color: @accent;
+}
+
+.input placeholder {
+  opacity: 0.5;
+}
+
+.input selection {
+  background: alpha(@accent, 0.25);
+}
+
+.input:focus,
+.input:active {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Results */
+
+.content-container {
+  background: transparent;
+}
+
+.placeholder {
+  color: @muted;
+  padding: 14px;
+}
+
+.scroll {
+  background: transparent;
+}
+
+.list {
+  background: transparent;
+}
+
+child,
+child > * {
+  background: transparent;
+}
+
+child:hover .item-box {
+  background: alpha(@text, 0.04);
+}
+
+child:selected {
+  background: alpha(@text, 0.07);
+}
+
+child:selected .item-box {
+  background: transparent;
+}
+
+child:selected .item-box * {
+  color: @selected-text;
+}
+
+/* Items */
+
+.item-box {
+  padding-left: 14px;
+  padding-right: 10px;
+}
+
+.item-text-box {
+  all: unset;
+  padding: 12px 0;
+}
+
+.item-text {
+  color: @text;
+}
+
+.item-subtext {
+  font-size: 11px;
+  color: @muted;
+  opacity: 0.75;
+}
+
+.item-image {
+  margin-right: 14px;
+  -gtk-icon-transform: scale(0.9);
+}
+
+.item-image-text {
+  font-size: 24px;
+}
+
+/* Quick activation */
+
+.item-quick-activation {
+  color: @accent;
+  background: alpha(@accent, 0.10);
+  padding: 4px 7px;
+}
+
+/* Current item */
+
+.current {
+  font-style: italic;
+}
+
+/* Keybinds */
+
+.keybinds {
+  background: @background;
+  color: @muted;
+  padding: 10px;
+  margin-top: 10px;
+  border-top: 1px solid @border;
+}
+
+.global-keybinds,
+.item-keybinds {
+  color: @muted;
+}
+
+.keybind {
+  color: @muted;
+}
+
+.keybind-bind {
+  color: @accent;
+}
+
+.keybind-label {
+  color: @text;
+  border: 1px solid @border;
+  padding: 2px 5px;
+}
+
+/* Preview */
+
+.preview {
+  background: @base;
+  color: @text;
+  border: 1px solid @border;
+  padding: 10px;
+}
+
+.preview-box {
+  background: transparent;
+}
+
+.preview-content {
+  color: @text;
+}
+
+/* Popovers */
+
+popover {
+  background: @base;
+  border: 1px solid @border;
+  padding: 8px;
+}
+
+/* Provider-specific */
+
+.calc .item-text {
+  color: @accent;
+}
+
+.symbols .item-image {
+  font-size: 24px;
+}
+
+.providerlist .item-subtext {
+  color: @muted;
+  opacity: 1;
+}
+
+.todo.done .item-text-box {
+  opacity: 0.35;
+}
+
+.todo.urgent {
+  color: #C34043;
+}
+
+.todo.active {
+  color: @accent;
+}
+
+.bluetooth.disconnected {
+  opacity: 0.5;
+}
+
+.error {
+  padding: 10px;
+  background: #C34043;
+  color: #DCD7BA;
+}
+
+/* Misc */
+
+.preview-content.archlinuxpkgs,
+.preview-content.dnfpackages,
+.preview-content.aptpackages {
+  font-family: monospace;
+}

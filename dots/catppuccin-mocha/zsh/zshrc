@@ -1,0 +1,25 @@
+
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+bindkey "^H" backward-kill-word
+bindkey "^[[3;5~" kill-word
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/.local/bin:$PATH"
+
+ZSH_THEME="hx6h"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+alias a="cava"
+alias b="cmatrix -C white -B"
+alias c="tty-clock -s -c -C 7"
+
+fastfetch
+

@@ -1,0 +1,123 @@
+{ pkgs, ... }:
+
+{
+  imports = [
+    ./hardware-configuration.nix
+
+    ./modules/audio.nix
+    ./modules/bluetooth.nix
+    ./modules/bootloader.nix
+    ./modules/desktop.nix
+    ./modules/doas.nix
+    ./modules/gaming.nix
+    ./modules/networking.nix
+    ./modules/services.nix
+    ./modules/virtualisation.nix
+  ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  nixpkgs.config.allowUnfree = true;
+
+  time.timeZone = "Europe/Prague";
+
+  i18n.defaultLocale = "en_US.UTF-8";
+  console.keyMap = "cz-lat2";
+  services.xserver.xkb = {
+    layout = "cz";
+    variant = "";
+  };
+
+  users.groups.larp = { };
+  users.users.larp = {
+    isNormalUser = true;
+    group = "larp";
+    extraGroups = [
+      "network"
+      "wheel"
+      "networkmanager"
+      "video"
+      "audio"
+    ];
+    shell = pkgs.zsh;
+  };
+
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    algorithm = "lzo";
+    memoryPercent = 20;
+  };
+
+  environment = {
+    sessionVariables = {
+      GTK_USE_PORTAL = "1";
+      GDK_DEBUG = "portals";
+      TERMCMD = "kitty --class=file_chooser";
+    };
+    systemPackages = with pkgs; [
+      bash
+      gcc
+      git
+      curl
+      kitty
+      yazi
+      xdg-desktop-portal-termfilechooser
+      sbctl
+      alsa-lib
+      libpulseaudio
+      libGL
+      vulkan-loader
+    ];
+  };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka
+    noto-fonts-color-emoji
+  ];
+
+  fonts.fontconfig.defaultFonts = {
+    monospace = [
+      "Iosevka Nerd Font"
+      "Noto Color Emoji"
+    ];
+  };
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    amdgpu.initrd.enable = true;
+    enableRedistributableFirmware = true;
+  };
+
+  security.rtkit = {
+    enable = true;
+    args = [
+      "--no-canary"
+      "--rttime-usec-max=2000000"
+    ];
+  };
+
+  systemd.user.units."graphical-session.target".text = ''
+    [Unit]
+    RefuseManualStart=false
+    StopWhenUnneeded=false
+  '';
+
+  services.displayManager.ly.enable = true;
+
+  programs = {
+    zsh.enable = true;
+    mango.enable = true;
+    hyprland.enable = true;
+    niri.enable = true;
+    nix-ld.enable = true;
+  };
+
+  system.stateVersion = "26.11";
+}
