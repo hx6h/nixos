@@ -2,7 +2,7 @@
   boot.loader = {
     limine = {
       enable = true;
-      maxGenerations = 10;
+      maxGenerations = 2;
       secureBoot.enable = false;
     };
     efi.canTouchEfiVariables = true;

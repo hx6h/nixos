@@ -1,0 +1,104 @@
+configuration {
+    modes: "drun";
+    sorting-method: "normal";
+    show-icons: true;
+    matching: "regex";
+    drun-match-fields: "name";
+    display-run: "menu:";
+    display-drun: "  ";
+}
+
+* {
+    font: "JetBrains Mono 11";
+    background-color: transparent;
+    text-color: #C4C4C4;
+    margin: 0px;
+    padding: 0px;
+    spacing: 0px;
+}
+
+window {
+    location: center;
+    width: 500;
+    y-offset: -20;
+
+    border-radius: 12px;
+    border: 1px;
+    border-color: #575757;
+
+    background-color: #171717;
+}
+
+mainbox {
+    padding: 8px;
+    background-color: #171717;
+}
+
+inputbar {
+    background-color: #222222;
+    border-radius: 6px;
+    border: 1px;
+    border-color: #575757;
+
+    padding: 8px 12px;
+    spacing: 8px;
+}
+
+prompt {
+    text-color: #E6E6E6;
+    background-color: transparent;
+}
+
+entry {
+    text-color: #E6E6E6;
+    placeholder: "search";
+    placeholder-color: #858585;
+    background-color: transparent;
+}
+
+listview {
+    background-color: #171717;
+    margin: 8px 0 0;
+
+    columns: 1;
+    lines: 6;
+    fixed-height: false;
+}
+
+/* ===== Elements ===== */
+element {
+    padding: 8px 10px;
+    spacing: 6px;
+    border-radius: 6px;
+}
+
+element normal.normal {
+    background-color: #171717;
+    text-color: #B0B0B0;
+}
+
+element alternate.normal {
+    background-color: #1C1C1C;
+    text-color: #B0B0B0;
+}
+
+element normal.urgent {
+    background-color: #351A1A;
+    text-color: #E6E6E6;
+}
+
+element normal.active {
+    background-color: #222222;
+    text-color: #CCCCCC;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: #383838;
+    text-color: #E6E6E6;
+}
+
+element selected.urgent {
+    background-color: #5C1A1A;
+    text-color: #FFFFFF;
+}

@@ -9,7 +9,7 @@ let
   #   pinepuccin - smth between catppuccin and pine lol
   #   rosepine - speaks for iteslf
   # ────────────────────────────────────────────────────────────────
-  setup = "osaka-jade";
+  setup = "modern";
 in
 {
   imports = [
@@ -45,6 +45,7 @@ in
     prismlauncher
     obsidian
     telegram-desktop
+    vesktop
 
     # development
     zed-editor
